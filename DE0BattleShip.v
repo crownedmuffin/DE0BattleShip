@@ -1,6 +1,6 @@
 module DE0BattleShip(clk0, B, dispHEX0, dispHEX1, dispHEX2, dispHEX3);
 	
-	//Inputs
+	//Inputs.
 	input clk0; 		//50MHz
 	input [2:0] B;
 	
