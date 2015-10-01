@@ -1,0 +1,7 @@
+
+State Machine - |DE0BattleShip|y
+Name y.result y.playMode y.setupMode y.startScreen 
+y.startScreen 0 0 0 0 
+y.setupMode 0 0 1 1 
+y.playMode 0 1 0 1 
+y.result 1 0 0 1 
