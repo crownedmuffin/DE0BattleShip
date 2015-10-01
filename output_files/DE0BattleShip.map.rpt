@@ -1,0 +1,862 @@
+Analysis & Synthesis report for DE0BattleShip
+Thu Oct 01 03:04:14 2015
+Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. State Machine - |DE0BattleShip|y
+  9. User-Specified and Inferred Latches
+ 10. Logic Cells Representing Combinational Loops
+ 11. Registers Removed During Synthesis
+ 12. General Register Statistics
+ 13. Inverted Register Statistics
+ 14. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 15. Parameter Settings for User Entity Instance: Top-level Entity: |DE0BattleShip
+ 16. Elapsed Time Per Partition
+ 17. Analysis & Synthesis Messages
+ 18. Analysis & Synthesis Suppressed Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2013 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++--------------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                         ;
++------------------------------------+-------------------------------------------------+
+; Analysis & Synthesis Status        ; Successful - Thu Oct 01 03:04:14 2015           ;
+; Quartus II 64-Bit Version          ; 13.0.1 Build 232 06/12/2013 SP 1 SJ Web Edition ;
+; Revision Name                      ; DE0BattleShip                                   ;
+; Top-level Entity Name              ; DE0BattleShip                                   ;
+; Family                             ; Cyclone III                                     ;
+; Total logic elements               ; 63                                              ;
+;     Total combinational functions  ; 63                                              ;
+;     Dedicated logic registers      ; 11                                              ;
+; Total registers                    ; 11                                              ;
+; Total pins                         ; 36                                              ;
+; Total virtual pins                 ; 0                                               ;
+; Total memory bits                  ; 0                                               ;
+; Embedded Multiplier 9-bit elements ; 0                                               ;
+; Total PLLs                         ; 0                                               ;
++------------------------------------+-------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                                        ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                                     ; Setting            ; Default Value      ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+; Device                                                                     ; EP3C16F484C6       ;                    ;
+; Top-level entity name                                                      ; DE0BattleShip      ; DE0BattleShip      ;
+; Family name                                                                ; Cyclone III        ; Cyclone IV GX      ;
+; Use smart compilation                                                      ; Off                ; Off                ;
+; Enable parallel Assembler and TimeQuest Timing Analyzer during compilation ; On                 ; On                 ;
+; Enable compact report table                                                ; Off                ; Off                ;
+; Restructure Multiplexers                                                   ; Auto               ; Auto               ;
+; Create Debugging Nodes for IP Cores                                        ; Off                ; Off                ;
+; Preserve fewer node names                                                  ; On                 ; On                 ;
+; Disable OpenCore Plus hardware evaluation                                  ; Off                ; Off                ;
+; Verilog Version                                                            ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                               ; VHDL_1993          ; VHDL_1993          ;
+; State Machine Processing                                                   ; Auto               ; Auto               ;
+; Safe State Machine                                                         ; Off                ; Off                ;
+; Extract Verilog State Machines                                             ; On                 ; On                 ;
+; Extract VHDL State Machines                                                ; On                 ; On                 ;
+; Ignore Verilog initial constructs                                          ; Off                ; Off                ;
+; Iteration limit for constant Verilog loops                                 ; 5000               ; 5000               ;
+; Iteration limit for non-constant Verilog loops                             ; 250                ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                                    ; On                 ; On                 ;
+; Infer RAMs from Raw Logic                                                  ; On                 ; On                 ;
+; Parallel Synthesis                                                         ; On                 ; On                 ;
+; DSP Block Balancing                                                        ; Auto               ; Auto               ;
+; NOT Gate Push-Back                                                         ; On                 ; On                 ;
+; Power-Up Don't Care                                                        ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                               ; Off                ; Off                ;
+; Remove Duplicate Registers                                                 ; On                 ; On                 ;
+; Ignore CARRY Buffers                                                       ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                                     ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                                      ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                                  ; Off                ; Off                ;
+; Ignore LCELL Buffers                                                       ; Off                ; Off                ;
+; Ignore SOFT Buffers                                                        ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                             ; Off                ; Off                ;
+; Optimization Technique                                                     ; Balanced           ; Balanced           ;
+; Carry Chain Length                                                         ; 70                 ; 70                 ;
+; Auto Carry Chains                                                          ; On                 ; On                 ;
+; Auto Open-Drain Pins                                                       ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                                      ; Off                ; Off                ;
+; Auto ROM Replacement                                                       ; On                 ; On                 ;
+; Auto RAM Replacement                                                       ; On                 ; On                 ;
+; Auto DSP Block Replacement                                                 ; On                 ; On                 ;
+; Auto Shift Register Replacement                                            ; Auto               ; Auto               ;
+; Allow Shift Register Merging across Hierarchies                            ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                              ; On                 ; On                 ;
+; Strict RAM Replacement                                                     ; Off                ; Off                ;
+; Allow Synchronous Control Signals                                          ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                                     ; Off                ; Off                ;
+; Auto RAM Block Balancing                                                   ; On                 ; On                 ;
+; Auto RAM to Logic Cell Conversion                                          ; Off                ; Off                ;
+; Auto Resource Sharing                                                      ; Off                ; Off                ;
+; Allow Any RAM Size For Recognition                                         ; Off                ; Off                ;
+; Allow Any ROM Size For Recognition                                         ; Off                ; Off                ;
+; Allow Any Shift Register Size For Recognition                              ; Off                ; Off                ;
+; Use LogicLock Constraints during Resource Balancing                        ; On                 ; On                 ;
+; Ignore translate_off and synthesis_off directives                          ; Off                ; Off                ;
+; Timing-Driven Synthesis                                                    ; On                 ; On                 ;
+; Report Parameter Settings                                                  ; On                 ; On                 ;
+; Report Source Assignments                                                  ; On                 ; On                 ;
+; Report Connectivity Checks                                                 ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                                         ; Off                ; Off                ;
+; Synchronization Register Chain Length                                      ; 2                  ; 2                  ;
+; PowerPlay Power Optimization                                               ; Normal compilation ; Normal compilation ;
+; HDL message level                                                          ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages                            ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report                   ; 5000               ; 5000               ;
+; Number of Swept Nodes Reported in Synthesis Report                         ; 5000               ; 5000               ;
+; Number of Inverted Registers Reported in Synthesis Report                  ; 100                ; 100                ;
+; Clock MUX Protection                                                       ; On                 ; On                 ;
+; Auto Gated Clock Conversion                                                ; Off                ; Off                ;
+; Block Design Naming                                                        ; Auto               ; Auto               ;
+; SDC constraint protection                                                  ; Off                ; Off                ;
+; Synthesis Effort                                                           ; Auto               ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal               ; On                 ; On                 ;
+; Pre-Mapping Resynthesis Optimization                                       ; Off                ; Off                ;
+; Analysis & Synthesis Message Level                                         ; Medium             ; Medium             ;
+; Disable Register Merging Across Hierarchies                                ; Auto               ; Auto               ;
+; Resource Aware Inference For Block RAM                                     ; On                 ; On                 ;
+; Synthesis Seed                                                             ; 1                  ; 1                  ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+
+
+Parallel compilation was disabled, but you have multiple processors available. Enable parallel compilation to reduce compilation time.
++-------------------------------------+
+; Parallel Compilation                ;
++----------------------------+--------+
+; Processors                 ; Number ;
++----------------------------+--------+
+; Number detected on machine ; 8      ;
+; Maximum allowed            ; 1      ;
++----------------------------+--------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                      ;
++----------------------------------+-----------------+------------------------+-----------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type              ; File Name with Absolute Path                        ; Library ;
++----------------------------------+-----------------+------------------------+-----------------------------------------------------+---------+
+; DE0BattleShip.v                  ; yes             ; User Verilog HDL File  ; C:/Users/Ryan/Desktop/DE0BattleShip/DE0BattleShip.v ;         ;
++----------------------------------+-----------------+------------------------+-----------------------------------------------------+---------+
+
+
++----------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary              ;
++---------------------------------------------+------------+
+; Resource                                    ; Usage      ;
++---------------------------------------------+------------+
+; Estimated Total logic elements              ; 63         ;
+;                                             ;            ;
+; Total combinational functions               ; 63         ;
+; Logic element usage by number of LUT inputs ;            ;
+;     -- 4 input functions                    ; 36         ;
+;     -- 3 input functions                    ; 17         ;
+;     -- <=2 input functions                  ; 10         ;
+;                                             ;            ;
+; Logic elements by mode                      ;            ;
+;     -- normal mode                          ; 63         ;
+;     -- arithmetic mode                      ; 0          ;
+;                                             ;            ;
+; Total registers                             ; 11         ;
+;     -- Dedicated logic registers            ; 11         ;
+;     -- I/O registers                        ; 0          ;
+;                                             ;            ;
+; I/O pins                                    ; 36         ;
+; Embedded Multiplier 9-bit elements          ; 0          ;
+; Maximum fan-out node                        ; y.playMode ;
+; Maximum fan-out                             ; 27         ;
+; Total fan-out                               ; 306        ;
+; Average fan-out                             ; 2.10       ;
++---------------------------------------------+------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                         ;
++----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------+--------------+
+; Compilation Hierarchy Node ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name ; Library Name ;
++----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------+--------------+
+; |DE0BattleShip             ; 63 (63)           ; 11 (11)      ; 0           ; 0            ; 0       ; 0         ; 36   ; 0            ; |DE0BattleShip      ; work         ;
++----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
+Encoding Type:  One-Hot
++---------------------------------------------------------------------+
+; State Machine - |DE0BattleShip|y                                    ;
++---------------+----------+------------+-------------+---------------+
+; Name          ; y.result ; y.playMode ; y.setupMode ; y.startScreen ;
++---------------+----------+------------+-------------+---------------+
+; y.startScreen ; 0        ; 0          ; 0           ; 0             ;
+; y.setupMode   ; 0        ; 0          ; 1           ; 1             ;
+; y.playMode    ; 0        ; 1          ; 0           ; 1             ;
+; y.result      ; 1        ; 0          ; 0           ; 1             ;
++---------------+----------+------------+-------------+---------------+
+
+
++---------------------------------------------------------------------------------------------------+
+; User-Specified and Inferred Latches                                                               ;
++----------------------------------------------------+---------------------+------------------------+
+; Latch Name                                         ; Latch Enable Signal ; Free of Timing Hazards ;
++----------------------------------------------------+---------------------+------------------------+
+; matchFound                                         ; Selector108         ; yes                    ;
+; Y.playMode_185426                                  ; Selector106         ; yes                    ;
+; Y.result_185340                                    ; Selector106         ; yes                    ;
+; Y.startScreen_185512                               ; Selector105         ; yes                    ;
+; Number of user-specified and inferred latches = 4  ;                     ;                        ;
++----------------------------------------------------+---------------------+------------------------+
+Note: All latches listed above may not be present at the end of synthesis due to various synthesis optimizations.
+
+
++-------------------------------------------------------------+
+; Logic Cells Representing Combinational Loops                ;
++--------------------------------------------------------+----+
+; Logic Cell Name                                        ;    ;
++--------------------------------------------------------+----+
+; dispHEX1[6]~0                                          ;    ;
+; dispHEX1[5]~1                                          ;    ;
+; dispHEX1[4]~2                                          ;    ;
+; dispHEX1[3]~3                                          ;    ;
+; dispHEX1[2]~4                                          ;    ;
+; dispHEX1[1]~5                                          ;    ;
+; dispHEX1[0]~6                                          ;    ;
+; dispHEX2[7]~0                                          ;    ;
+; dispHEX2[6]~1                                          ;    ;
+; dispHEX2[5]~2                                          ;    ;
+; dispHEX2[4]~3                                          ;    ;
+; dispHEX2[3]~4                                          ;    ;
+; dispHEX2[2]~5                                          ;    ;
+; dispHEX2[1]~6                                          ;    ;
+; dispHEX2[0]~7                                          ;    ;
+; Number of logic cells representing combinational loops ; 15 ;
++--------------------------------------------------------+----+
+Note: All cells listed above may not be present at the end of synthesis due to various synthesis optimizations.
+
+
++------------------------------------------------------------+
+; Registers Removed During Synthesis                         ;
++---------------------------------------+--------------------+
+; Register name                         ; Reason for Removal ;
++---------------------------------------+--------------------+
+; lfsrX[0..2]                           ; Lost fanout        ;
+; y.setupMode                           ; Lost fanout        ;
+; y~2                                   ; Lost fanout        ;
+; y~3                                   ; Lost fanout        ;
+; y~4                                   ; Lost fanout        ;
+; Total Number of Removed Registers = 7 ;                    ;
++---------------------------------------+--------------------+
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 11    ;
+; Number of registers using Synchronous Clear  ; 0     ;
+; Number of registers using Synchronous Load   ; 0     ;
+; Number of registers using Asynchronous Clear ; 0     ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 6     ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++--------------------------------------------------+
+; Inverted Register Statistics                     ;
++----------------------------------------+---------+
+; Inverted Register                      ; Fan out ;
++----------------------------------------+---------+
+; upcounter_Y[3]                         ; 11      ;
+; upcounter_X[3]                         ; 11      ;
+; Total number of inverted registers = 2 ;         ;
++----------------------------------------+---------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                           ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------+
+; 16:1               ; 5 bits    ; 50 LEs        ; 20 LEs               ; 30 LEs                 ; No         ; |DE0BattleShip|dispHEX     ;
+; 16:1               ; 6 bits    ; 60 LEs        ; 24 LEs               ; 36 LEs                 ; No         ; |DE0BattleShip|dispHEX     ;
+; 18:1               ; 2 bits    ; 24 LEs        ; 12 LEs               ; 12 LEs                 ; No         ; |DE0BattleShip|Selector125 ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------+
+
+
++-------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Top-level Entity: |DE0BattleShip ;
++------------------+-------+----------------------------------------------------+
+; Parameter Name   ; Value ; Type                                               ;
++------------------+-------+----------------------------------------------------+
+; n                ; 3     ; Signed Integer                                     ;
+; startScreen      ; 000   ; Unsigned Binary                                    ;
+; setupMode        ; 001   ; Unsigned Binary                                    ;
+; playMode         ; 010   ; Unsigned Binary                                    ;
+; result           ; 011   ; Unsigned Binary                                    ;
+; hit              ; 100   ; Unsigned Binary                                    ;
+; splash           ; 101   ; Unsigned Binary                                    ;
+; statScore        ; 110   ; Unsigned Binary                                    ;
+; generateShipData ; 00    ; Unsigned Binary                                    ;
+; generateCoord    ; 01    ; Unsigned Binary                                    ;
+; validCoord       ; 10    ; Unsigned Binary                                    ;
+; placeShip        ; 11    ; Unsigned Binary                                    ;
+; addX             ; 000   ; Unsigned Binary                                    ;
+; subX             ; 001   ; Unsigned Binary                                    ;
+; keepX            ; 010   ; Unsigned Binary                                    ;
+; addY             ; 011   ; Unsigned Binary                                    ;
+; subY             ; 100   ; Unsigned Binary                                    ;
+; keepY            ; 101   ; Unsigned Binary                                    ;
++------------------+-------+----------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:03     ;
++----------------+--------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus II 64-Bit Analysis & Synthesis
+    Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
+    Info: Processing started: Thu Oct 01 03:03:41 2015
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off DE0BattleShip -c DE0BattleShip
+Warning (20028): Parallel compilation is not licensed and has been disabled
+Info (12021): Found 1 design units, including 1 entities, in source file de0battleship.v
+    Info (12023): Found entity 1: DE0BattleShip
+Warning (12019): Can't analyze file -- file BattleShipMain.v is missing
+Info (12127): Elaborating entity "DE0BattleShip" for the top level hierarchy
+Warning (10036): Verilog HDL or VHDL warning at DE0BattleShip.v(27): object "totalTries" assigned a value but never read
+Warning (10036): Verilog HDL or VHDL warning at DE0BattleShip.v(27): object "totalHits" assigned a value but never read
+Warning (10036): Verilog HDL or VHDL warning at DE0BattleShip.v(66): object "W" assigned a value but never read
+Warning (10230): Verilog HDL assignment warning at DE0BattleShip.v(97): truncated value with size 32 to match size of target (3)
+Warning (10235): Verilog HDL Always Construct warning at DE0BattleShip.v(104): variable "lfsrY" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at DE0BattleShip.v(107): variable "lfsrY" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10230): Verilog HDL assignment warning at DE0BattleShip.v(107): truncated value with size 32 to match size of target (3)
+Warning (10235): Verilog HDL Always Construct warning at DE0BattleShip.v(114): variable "lfsrDir" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at DE0BattleShip.v(117): variable "lfsrDir" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10230): Verilog HDL assignment warning at DE0BattleShip.v(142): truncated value with size 32 to match size of target (4)
+Warning (10230): Verilog HDL assignment warning at DE0BattleShip.v(152): truncated value with size 32 to match size of target (4)
+Warning (10230): Verilog HDL assignment warning at DE0BattleShip.v(178): truncated value with size 32 to match size of target (2)
+Warning (10235): Verilog HDL Always Construct warning at DE0BattleShip.v(204): variable "nextSetupStage" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at DE0BattleShip.v(206): variable "shipID" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10230): Verilog HDL assignment warning at DE0BattleShip.v(211): truncated value with size 32 to match size of target (2)
+Warning (10230): Verilog HDL assignment warning at DE0BattleShip.v(217): truncated value with size 32 to match size of target (2)
+Warning (10235): Verilog HDL Always Construct warning at DE0BattleShip.v(251): variable "y" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at DE0BattleShip.v(279): variable "upcounter_X" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at DE0BattleShip.v(280): variable "upcounter_X" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at DE0BattleShip.v(281): variable "upcounter_X" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at DE0BattleShip.v(282): variable "upcounter_X" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at DE0BattleShip.v(283): variable "upcounter_X" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at DE0BattleShip.v(284): variable "upcounter_X" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at DE0BattleShip.v(287): variable "upcounter_Y" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at DE0BattleShip.v(288): variable "upcounter_Y" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at DE0BattleShip.v(289): variable "upcounter_Y" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at DE0BattleShip.v(290): variable "upcounter_Y" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at DE0BattleShip.v(291): variable "upcounter_Y" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at DE0BattleShip.v(292): variable "upcounter_Y" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at DE0BattleShip.v(321): variable "matchFound" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at DE0BattleShip.v(322): variable "upcounter_X" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at DE0BattleShip.v(322): variable "upcounter_Y" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at DE0BattleShip.v(373): variable "setupStage" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at DE0BattleShip.v(377): variable "lfsrDir" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at DE0BattleShip.v(380): variable "lfsrX" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at DE0BattleShip.v(381): variable "lfsrY" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at DE0BattleShip.v(388): variable "shipDirection" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at DE0BattleShip.v(394): variable "shipCoordX0" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at DE0BattleShip.v(403): variable "shipCoordX0" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at DE0BattleShip.v(403): variable "shipCoordY0" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at DE0BattleShip.v(413): variable "shipCoordY0" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at DE0BattleShip.v(422): variable "shipCoordX0" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at DE0BattleShip.v(422): variable "shipCoordY0" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at DE0BattleShip.v(433): variable "shipCoordX0" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at DE0BattleShip.v(443): variable "shipCoordX0" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at DE0BattleShip.v(443): variable "shipCoordY0" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at DE0BattleShip.v(453): variable "shipCoordY0" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at DE0BattleShip.v(462): variable "shipCoordX0" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at DE0BattleShip.v(462): variable "shipCoordY0" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at DE0BattleShip.v(493): variable "shipCoordX0" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at DE0BattleShip.v(494): variable "shipCoordY0" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at DE0BattleShip.v(504): variable "X_operation" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10230): Verilog HDL assignment warning at DE0BattleShip.v(505): truncated value with size 32 to match size of target (3)
+Warning (10230): Verilog HDL assignment warning at DE0BattleShip.v(506): truncated value with size 32 to match size of target (3)
+Warning (10235): Verilog HDL Always Construct warning at DE0BattleShip.v(510): variable "Y_operation" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10230): Verilog HDL assignment warning at DE0BattleShip.v(511): truncated value with size 32 to match size of target (3)
+Warning (10230): Verilog HDL assignment warning at DE0BattleShip.v(512): truncated value with size 32 to match size of target (3)
+Warning (10235): Verilog HDL Always Construct warning at DE0BattleShip.v(577): variable "shipDirection" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10270): Verilog HDL Case Statement warning at DE0BattleShip.v(577): incomplete case statement has no default case item
+Warning (10235): Verilog HDL Always Construct warning at DE0BattleShip.v(889): variable "shipID" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10240): Verilog HDL Always Construct warning at DE0BattleShip.v(202): inferring latch(es) for variable "Y", which holds its previous value in one or more paths through the always construct
+Warning (10240): Verilog HDL Always Construct warning at DE0BattleShip.v(202): inferring latch(es) for variable "matchFound", which holds its previous value in one or more paths through the always construct
+Warning (10240): Verilog HDL Always Construct warning at DE0BattleShip.v(202): inferring latch(es) for variable "checkingIndex", which holds its previous value in one or more paths through the always construct
+Warning (10240): Verilog HDL Always Construct warning at DE0BattleShip.v(202): inferring latch(es) for variable "shipDirection", which holds its previous value in one or more paths through the always construct
+Warning (10240): Verilog HDL Always Construct warning at DE0BattleShip.v(202): inferring latch(es) for variable "shipCoordX0", which holds its previous value in one or more paths through the always construct
+Warning (10240): Verilog HDL Always Construct warning at DE0BattleShip.v(202): inferring latch(es) for variable "shipCoordY0", which holds its previous value in one or more paths through the always construct
+Warning (10240): Verilog HDL Always Construct warning at DE0BattleShip.v(202): inferring latch(es) for variable "nextSetupStage", which holds its previous value in one or more paths through the always construct
+Warning (10240): Verilog HDL Always Construct warning at DE0BattleShip.v(202): inferring latch(es) for variable "X_operation", which holds its previous value in one or more paths through the always construct
+Warning (10240): Verilog HDL Always Construct warning at DE0BattleShip.v(202): inferring latch(es) for variable "Y_operation", which holds its previous value in one or more paths through the always construct
+Warning (10240): Verilog HDL Always Construct warning at DE0BattleShip.v(202): inferring latch(es) for variable "shipIndex", which holds its previous value in one or more paths through the always construct
+Warning (10240): Verilog HDL Always Construct warning at DE0BattleShip.v(202): inferring latch(es) for variable "currentIndex", which holds its previous value in one or more paths through the always construct
+Warning (10240): Verilog HDL Always Construct warning at DE0BattleShip.v(202): inferring latch(es) for variable "collisionDetected", which holds its previous value in one or more paths through the always construct
+Warning (10240): Verilog HDL Always Construct warning at DE0BattleShip.v(202): inferring latch(es) for variable "comparingIndex", which holds its previous value in one or more paths through the always construct
+Warning (10240): Verilog HDL Always Construct warning at DE0BattleShip.v(202): inferring latch(es) for variable "comparingShipID", which holds its previous value in one or more paths through the always construct
+Warning (10240): Verilog HDL Always Construct warning at DE0BattleShip.v(202): inferring latch(es) for variable "nextComparingShipID", which holds its previous value in one or more paths through the always construct
+Warning (10240): Verilog HDL Always Construct warning at DE0BattleShip.v(202): inferring latch(es) for variable "shipID", which holds its previous value in one or more paths through the always construct
+Info (10041): Inferred latch for "shipID.0110" at DE0BattleShip.v(202)
+Info (10041): Inferred latch for "shipID.0101" at DE0BattleShip.v(202)
+Info (10041): Inferred latch for "shipID.0100" at DE0BattleShip.v(202)
+Info (10041): Inferred latch for "shipID.0011" at DE0BattleShip.v(202)
+Info (10041): Inferred latch for "shipID.0010" at DE0BattleShip.v(202)
+Info (10041): Inferred latch for "shipID.0001" at DE0BattleShip.v(202)
+Info (10041): Inferred latch for "nextComparingShipID.0110" at DE0BattleShip.v(202)
+Info (10041): Inferred latch for "nextComparingShipID.0101" at DE0BattleShip.v(202)
+Info (10041): Inferred latch for "nextComparingShipID.0100" at DE0BattleShip.v(202)
+Info (10041): Inferred latch for "nextComparingShipID.0011" at DE0BattleShip.v(202)
+Info (10041): Inferred latch for "nextComparingShipID.0010" at DE0BattleShip.v(202)
+Info (10041): Inferred latch for "nextComparingShipID.0001" at DE0BattleShip.v(202)
+Info (10041): Inferred latch for "nextComparingShipID.0000" at DE0BattleShip.v(202)
+Info (10041): Inferred latch for "comparingShipID.0110" at DE0BattleShip.v(202)
+Info (10041): Inferred latch for "comparingShipID.0101" at DE0BattleShip.v(202)
+Info (10041): Inferred latch for "comparingShipID.0100" at DE0BattleShip.v(202)
+Info (10041): Inferred latch for "comparingShipID.0011" at DE0BattleShip.v(202)
+Info (10041): Inferred latch for "comparingShipID.0010" at DE0BattleShip.v(202)
+Info (10041): Inferred latch for "comparingShipID.0001" at DE0BattleShip.v(202)
+Info (10041): Inferred latch for "comparingShipID.0000" at DE0BattleShip.v(202)
+Info (10041): Inferred latch for "collisionDetected" at DE0BattleShip.v(202)
+Info (10041): Inferred latch for "shipY[17][2]" at DE0BattleShip.v(202)
+Info (10041): Inferred latch for "shipY[17][1]" at DE0BattleShip.v(202)
+Info (10041): Inferred latch for "shipY[17][0]" at DE0BattleShip.v(202)
+Info (10041): Inferred latch for "shipY[16][2]" at DE0BattleShip.v(202)
+Info (10041): Inferred latch for "shipY[16][1]" at DE0BattleShip.v(202)
+Info (10041): Inferred latch for "shipY[16][0]" at DE0BattleShip.v(202)
+Info (10041): Inferred latch for "shipY[15][2]" at DE0BattleShip.v(202)
+Info (10041): Inferred latch for "shipY[15][1]" at DE0BattleShip.v(202)
+Info (10041): Inferred latch for "shipY[15][0]" at DE0BattleShip.v(202)
+Info (10041): Inferred latch for "shipY[14][2]" at DE0BattleShip.v(202)
+Info (10041): Inferred latch for "shipY[14][1]" at DE0BattleShip.v(202)
+Info (10041): Inferred latch for "shipY[14][0]" at DE0BattleShip.v(202)
+Info (10041): Inferred latch for "shipY[13][2]" at DE0BattleShip.v(202)
+Info (10041): Inferred latch for "shipY[13][1]" at DE0BattleShip.v(202)
+Info (10041): Inferred latch for "shipY[13][0]" at DE0BattleShip.v(202)
+Info (10041): Inferred latch for "shipY[12][2]" at DE0BattleShip.v(202)
+Info (10041): Inferred latch for "shipY[12][1]" at DE0BattleShip.v(202)
+Info (10041): Inferred latch for "shipY[12][0]" at DE0BattleShip.v(202)
+Info (10041): Inferred latch for "shipY[11][2]" at DE0BattleShip.v(202)
+Info (10041): Inferred latch for "shipY[11][1]" at DE0BattleShip.v(202)
+Info (10041): Inferred latch for "shipY[11][0]" at DE0BattleShip.v(202)
+Info (10041): Inferred latch for "shipY[10][2]" at DE0BattleShip.v(202)
+Info (10041): Inferred latch for "shipY[10][1]" at DE0BattleShip.v(202)
+Info (10041): Inferred latch for "shipY[10][0]" at DE0BattleShip.v(202)
+Info (10041): Inferred latch for "shipY[9][2]" at DE0BattleShip.v(202)
+Info (10041): Inferred latch for "shipY[9][1]" at DE0BattleShip.v(202)
+Info (10041): Inferred latch for "shipY[9][0]" at DE0BattleShip.v(202)
+Info (10041): Inferred latch for "shipY[8][2]" at DE0BattleShip.v(202)
+Info (10041): Inferred latch for "shipY[8][1]" at DE0BattleShip.v(202)
+Info (10041): Inferred latch for "shipY[8][0]" at DE0BattleShip.v(202)
+Info (10041): Inferred latch for "shipY[7][2]" at DE0BattleShip.v(202)
+Info (10041): Inferred latch for "shipY[7][1]" at DE0BattleShip.v(202)
+Info (10041): Inferred latch for "shipY[7][0]" at DE0BattleShip.v(202)
+Info (10041): Inferred latch for "shipY[6][2]" at DE0BattleShip.v(202)
+Info (10041): Inferred latch for "shipY[6][1]" at DE0BattleShip.v(202)
+Info (10041): Inferred latch for "shipY[6][0]" at DE0BattleShip.v(202)
+Info (10041): Inferred latch for "shipY[5][2]" at DE0BattleShip.v(202)
+Info (10041): Inferred latch for "shipY[5][1]" at DE0BattleShip.v(202)
+Info (10041): Inferred latch for "shipY[5][0]" at DE0BattleShip.v(202)
+Info (10041): Inferred latch for "shipY[4][2]" at DE0BattleShip.v(202)
+Info (10041): Inferred latch for "shipY[4][1]" at DE0BattleShip.v(202)
+Info (10041): Inferred latch for "shipY[4][0]" at DE0BattleShip.v(202)
+Info (10041): Inferred latch for "shipY[3][2]" at DE0BattleShip.v(202)
+Info (10041): Inferred latch for "shipY[3][1]" at DE0BattleShip.v(202)
+Info (10041): Inferred latch for "shipY[3][0]" at DE0BattleShip.v(202)
+Info (10041): Inferred latch for "shipY[2][2]" at DE0BattleShip.v(202)
+Info (10041): Inferred latch for "shipY[2][1]" at DE0BattleShip.v(202)
+Info (10041): Inferred latch for "shipY[2][0]" at DE0BattleShip.v(202)
+Info (10041): Inferred latch for "shipY[1][2]" at DE0BattleShip.v(202)
+Info (10041): Inferred latch for "shipY[1][1]" at DE0BattleShip.v(202)
+Info (10041): Inferred latch for "shipY[1][0]" at DE0BattleShip.v(202)
+Info (10041): Inferred latch for "shipY[0][2]" at DE0BattleShip.v(202)
+Info (10041): Inferred latch for "shipY[0][1]" at DE0BattleShip.v(202)
+Info (10041): Inferred latch for "shipY[0][0]" at DE0BattleShip.v(202)
+Info (10041): Inferred latch for "shipX[17][2]" at DE0BattleShip.v(202)
+Info (10041): Inferred latch for "shipX[17][1]" at DE0BattleShip.v(202)
+Info (10041): Inferred latch for "shipX[17][0]" at DE0BattleShip.v(202)
+Info (10041): Inferred latch for "shipX[16][2]" at DE0BattleShip.v(202)
+Info (10041): Inferred latch for "shipX[16][1]" at DE0BattleShip.v(202)
+Info (10041): Inferred latch for "shipX[16][0]" at DE0BattleShip.v(202)
+Info (10041): Inferred latch for "shipX[15][2]" at DE0BattleShip.v(202)
+Info (10041): Inferred latch for "shipX[15][1]" at DE0BattleShip.v(202)
+Info (10041): Inferred latch for "shipX[15][0]" at DE0BattleShip.v(202)
+Info (10041): Inferred latch for "shipX[14][2]" at DE0BattleShip.v(202)
+Info (10041): Inferred latch for "shipX[14][1]" at DE0BattleShip.v(202)
+Info (10041): Inferred latch for "shipX[14][0]" at DE0BattleShip.v(202)
+Info (10041): Inferred latch for "shipX[13][2]" at DE0BattleShip.v(202)
+Info (10041): Inferred latch for "shipX[13][1]" at DE0BattleShip.v(202)
+Info (10041): Inferred latch for "shipX[13][0]" at DE0BattleShip.v(202)
+Info (10041): Inferred latch for "shipX[12][2]" at DE0BattleShip.v(202)
+Info (10041): Inferred latch for "shipX[12][1]" at DE0BattleShip.v(202)
+Info (10041): Inferred latch for "shipX[12][0]" at DE0BattleShip.v(202)
+Info (10041): Inferred latch for "shipX[11][2]" at DE0BattleShip.v(202)
+Info (10041): Inferred latch for "shipX[11][1]" at DE0BattleShip.v(202)
+Info (10041): Inferred latch for "shipX[11][0]" at DE0BattleShip.v(202)
+Info (10041): Inferred latch for "shipX[10][2]" at DE0BattleShip.v(202)
+Info (10041): Inferred latch for "shipX[10][1]" at DE0BattleShip.v(202)
+Info (10041): Inferred latch for "shipX[10][0]" at DE0BattleShip.v(202)
+Info (10041): Inferred latch for "shipX[9][2]" at DE0BattleShip.v(202)
+Info (10041): Inferred latch for "shipX[9][1]" at DE0BattleShip.v(202)
+Info (10041): Inferred latch for "shipX[9][0]" at DE0BattleShip.v(202)
+Info (10041): Inferred latch for "shipX[8][2]" at DE0BattleShip.v(202)
+Info (10041): Inferred latch for "shipX[8][1]" at DE0BattleShip.v(202)
+Info (10041): Inferred latch for "shipX[8][0]" at DE0BattleShip.v(202)
+Info (10041): Inferred latch for "shipX[7][2]" at DE0BattleShip.v(202)
+Info (10041): Inferred latch for "shipX[7][1]" at DE0BattleShip.v(202)
+Info (10041): Inferred latch for "shipX[7][0]" at DE0BattleShip.v(202)
+Info (10041): Inferred latch for "shipX[6][2]" at DE0BattleShip.v(202)
+Info (10041): Inferred latch for "shipX[6][1]" at DE0BattleShip.v(202)
+Info (10041): Inferred latch for "shipX[6][0]" at DE0BattleShip.v(202)
+Info (10041): Inferred latch for "shipX[5][2]" at DE0BattleShip.v(202)
+Info (10041): Inferred latch for "shipX[5][1]" at DE0BattleShip.v(202)
+Info (10041): Inferred latch for "shipX[5][0]" at DE0BattleShip.v(202)
+Info (10041): Inferred latch for "shipX[4][2]" at DE0BattleShip.v(202)
+Info (10041): Inferred latch for "shipX[4][1]" at DE0BattleShip.v(202)
+Info (10041): Inferred latch for "shipX[4][0]" at DE0BattleShip.v(202)
+Info (10041): Inferred latch for "shipX[3][2]" at DE0BattleShip.v(202)
+Info (10041): Inferred latch for "shipX[3][1]" at DE0BattleShip.v(202)
+Info (10041): Inferred latch for "shipX[3][0]" at DE0BattleShip.v(202)
+Info (10041): Inferred latch for "shipX[2][2]" at DE0BattleShip.v(202)
+Info (10041): Inferred latch for "shipX[2][1]" at DE0BattleShip.v(202)
+Info (10041): Inferred latch for "shipX[2][0]" at DE0BattleShip.v(202)
+Info (10041): Inferred latch for "shipX[1][2]" at DE0BattleShip.v(202)
+Info (10041): Inferred latch for "shipX[1][1]" at DE0BattleShip.v(202)
+Info (10041): Inferred latch for "shipX[1][0]" at DE0BattleShip.v(202)
+Info (10041): Inferred latch for "shipX[0][2]" at DE0BattleShip.v(202)
+Info (10041): Inferred latch for "shipX[0][1]" at DE0BattleShip.v(202)
+Info (10041): Inferred latch for "shipX[0][0]" at DE0BattleShip.v(202)
+Info (10041): Inferred latch for "Y_operation.keepY" at DE0BattleShip.v(202)
+Info (10041): Inferred latch for "Y_operation.subY" at DE0BattleShip.v(202)
+Info (10041): Inferred latch for "Y_operation.addY" at DE0BattleShip.v(202)
+Info (10041): Inferred latch for "X_operation.keepX" at DE0BattleShip.v(202)
+Info (10041): Inferred latch for "X_operation.subX" at DE0BattleShip.v(202)
+Info (10041): Inferred latch for "X_operation.addX" at DE0BattleShip.v(202)
+Info (10041): Inferred latch for "nextSetupStage.placeShip" at DE0BattleShip.v(202)
+Info (10041): Inferred latch for "nextSetupStage.validCoord" at DE0BattleShip.v(202)
+Info (10041): Inferred latch for "nextSetupStage.generateShipData" at DE0BattleShip.v(202)
+Info (10041): Inferred latch for "shipCoordY0[2]" at DE0BattleShip.v(202)
+Info (10041): Inferred latch for "shipCoordY0[1]" at DE0BattleShip.v(202)
+Info (10041): Inferred latch for "shipCoordY0[0]" at DE0BattleShip.v(202)
+Info (10041): Inferred latch for "shipCoordX0[2]" at DE0BattleShip.v(202)
+Info (10041): Inferred latch for "shipCoordX0[1]" at DE0BattleShip.v(202)
+Info (10041): Inferred latch for "shipCoordX0[0]" at DE0BattleShip.v(202)
+Info (10041): Inferred latch for "shipDirection[2]" at DE0BattleShip.v(202)
+Info (10041): Inferred latch for "shipDirection[1]" at DE0BattleShip.v(202)
+Info (10041): Inferred latch for "shipDirection[0]" at DE0BattleShip.v(202)
+Info (10041): Inferred latch for "matchFound" at DE0BattleShip.v(202)
+Info (10041): Inferred latch for "Y.result" at DE0BattleShip.v(202)
+Info (10041): Inferred latch for "Y.playMode" at DE0BattleShip.v(202)
+Info (10041): Inferred latch for "Y.startScreen" at DE0BattleShip.v(202)
+Info (10041): Inferred latch for "dispHEX3[7]" at DE0BattleShip.v(321)
+Info (10041): Inferred latch for "dispHEX3[6]" at DE0BattleShip.v(321)
+Info (10041): Inferred latch for "dispHEX3[5]" at DE0BattleShip.v(321)
+Info (10041): Inferred latch for "dispHEX3[4]" at DE0BattleShip.v(321)
+Info (10041): Inferred latch for "dispHEX3[3]" at DE0BattleShip.v(321)
+Info (10041): Inferred latch for "dispHEX3[2]" at DE0BattleShip.v(321)
+Info (10041): Inferred latch for "dispHEX3[1]" at DE0BattleShip.v(321)
+Info (10041): Inferred latch for "dispHEX3[0]" at DE0BattleShip.v(321)
+Info (10041): Inferred latch for "dispHEX2[7]" at DE0BattleShip.v(321)
+Info (10041): Inferred latch for "dispHEX2[6]" at DE0BattleShip.v(321)
+Info (10041): Inferred latch for "dispHEX2[5]" at DE0BattleShip.v(321)
+Info (10041): Inferred latch for "dispHEX2[4]" at DE0BattleShip.v(321)
+Info (10041): Inferred latch for "dispHEX2[3]" at DE0BattleShip.v(321)
+Info (10041): Inferred latch for "dispHEX2[2]" at DE0BattleShip.v(321)
+Info (10041): Inferred latch for "dispHEX2[1]" at DE0BattleShip.v(321)
+Info (10041): Inferred latch for "dispHEX2[0]" at DE0BattleShip.v(321)
+Info (10041): Inferred latch for "dispHEX1[7]" at DE0BattleShip.v(321)
+Info (10041): Inferred latch for "dispHEX1[6]" at DE0BattleShip.v(321)
+Info (10041): Inferred latch for "dispHEX1[5]" at DE0BattleShip.v(321)
+Info (10041): Inferred latch for "dispHEX1[4]" at DE0BattleShip.v(321)
+Info (10041): Inferred latch for "dispHEX1[3]" at DE0BattleShip.v(321)
+Info (10041): Inferred latch for "dispHEX1[2]" at DE0BattleShip.v(321)
+Info (10041): Inferred latch for "dispHEX1[1]" at DE0BattleShip.v(321)
+Info (10041): Inferred latch for "dispHEX1[0]" at DE0BattleShip.v(321)
+Info (10041): Inferred latch for "dispHEX0[7]" at DE0BattleShip.v(321)
+Info (10041): Inferred latch for "dispHEX0[6]" at DE0BattleShip.v(321)
+Info (10041): Inferred latch for "dispHEX0[5]" at DE0BattleShip.v(321)
+Info (10041): Inferred latch for "dispHEX0[4]" at DE0BattleShip.v(321)
+Info (10041): Inferred latch for "dispHEX0[3]" at DE0BattleShip.v(321)
+Info (10041): Inferred latch for "dispHEX0[2]" at DE0BattleShip.v(321)
+Info (10041): Inferred latch for "dispHEX0[1]" at DE0BattleShip.v(321)
+Info (10041): Inferred latch for "dispHEX0[0]" at DE0BattleShip.v(321)
+Warning (14025): LATCH primitive "setupStage.validCoord" is permanently disabled
+Warning (14025): LATCH primitive "shipCoordX0[0]" is permanently disabled
+Warning (14025): LATCH primitive "shipCoordX0[1]" is permanently disabled
+Warning (14025): LATCH primitive "shipCoordX0[2]" is permanently disabled
+Warning (14025): LATCH primitive "shipCoordY0[0]" is permanently disabled
+Warning (14025): LATCH primitive "shipCoordY0[1]" is permanently disabled
+Warning (14025): LATCH primitive "shipCoordY0[2]" is permanently disabled
+Warning (14025): LATCH primitive "shipX[0][2]" is permanently disabled
+Warning (14025): LATCH primitive "shipX[1][2]" is permanently disabled
+Warning (14025): LATCH primitive "shipX[2][2]" is permanently disabled
+Warning (14025): LATCH primitive "shipX[3][2]" is permanently disabled
+Warning (14025): LATCH primitive "shipX[4][2]" is permanently disabled
+Warning (14025): LATCH primitive "shipX[5][2]" is permanently disabled
+Warning (14025): LATCH primitive "shipX[6][2]" is permanently disabled
+Warning (14025): LATCH primitive "shipX[7][2]" is permanently disabled
+Warning (14025): LATCH primitive "shipX[8][2]" is permanently disabled
+Warning (14025): LATCH primitive "shipX[9][2]" is permanently disabled
+Warning (14025): LATCH primitive "shipX[10][2]" is permanently disabled
+Warning (14025): LATCH primitive "shipX[11][2]" is permanently disabled
+Warning (14025): LATCH primitive "shipX[12][2]" is permanently disabled
+Warning (14025): LATCH primitive "shipX[13][2]" is permanently disabled
+Warning (14025): LATCH primitive "shipX[14][2]" is permanently disabled
+Warning (14025): LATCH primitive "shipX[15][2]" is permanently disabled
+Warning (14025): LATCH primitive "shipX[16][2]" is permanently disabled
+Warning (14025): LATCH primitive "shipY[0][0]" is permanently disabled
+Warning (14025): LATCH primitive "shipY[0][1]" is permanently disabled
+Warning (14025): LATCH primitive "shipY[0][2]" is permanently disabled
+Warning (14025): LATCH primitive "shipY[1][0]" is permanently disabled
+Warning (14025): LATCH primitive "shipY[1][1]" is permanently disabled
+Warning (14025): LATCH primitive "shipY[1][2]" is permanently disabled
+Warning (14025): LATCH primitive "shipY[2][0]" is permanently disabled
+Warning (14025): LATCH primitive "shipY[2][1]" is permanently disabled
+Warning (14025): LATCH primitive "shipY[2][2]" is permanently disabled
+Warning (14025): LATCH primitive "shipY[3][0]" is permanently disabled
+Warning (14025): LATCH primitive "shipY[3][1]" is permanently disabled
+Warning (14025): LATCH primitive "shipY[3][2]" is permanently disabled
+Warning (14025): LATCH primitive "shipY[4][0]" is permanently disabled
+Warning (14025): LATCH primitive "shipY[4][1]" is permanently disabled
+Warning (14025): LATCH primitive "shipY[4][2]" is permanently disabled
+Warning (14025): LATCH primitive "shipY[5][0]" is permanently disabled
+Warning (14025): LATCH primitive "shipY[5][1]" is permanently disabled
+Warning (14025): LATCH primitive "shipY[5][2]" is permanently disabled
+Warning (14025): LATCH primitive "shipY[6][0]" is permanently disabled
+Warning (14025): LATCH primitive "shipY[6][1]" is permanently disabled
+Warning (14025): LATCH primitive "shipY[6][2]" is permanently disabled
+Warning (14025): LATCH primitive "shipY[7][0]" is permanently disabled
+Warning (14025): LATCH primitive "shipY[7][1]" is permanently disabled
+Warning (14025): LATCH primitive "shipY[7][2]" is permanently disabled
+Warning (14025): LATCH primitive "shipY[8][0]" is permanently disabled
+Warning (14025): LATCH primitive "shipY[8][1]" is permanently disabled
+Warning (14025): LATCH primitive "shipY[8][2]" is permanently disabled
+Warning (14025): LATCH primitive "shipY[9][0]" is permanently disabled
+Warning (14025): LATCH primitive "shipY[9][1]" is permanently disabled
+Warning (14025): LATCH primitive "shipY[9][2]" is permanently disabled
+Warning (14025): LATCH primitive "shipY[10][0]" is permanently disabled
+Warning (14025): LATCH primitive "shipY[10][1]" is permanently disabled
+Warning (14025): LATCH primitive "shipY[10][2]" is permanently disabled
+Warning (14025): LATCH primitive "shipY[11][0]" is permanently disabled
+Warning (14025): LATCH primitive "shipY[11][1]" is permanently disabled
+Warning (14025): LATCH primitive "shipY[11][2]" is permanently disabled
+Warning (14025): LATCH primitive "shipY[12][0]" is permanently disabled
+Warning (14025): LATCH primitive "shipY[12][1]" is permanently disabled
+Warning (14025): LATCH primitive "shipY[12][2]" is permanently disabled
+Warning (14025): LATCH primitive "shipY[13][0]" is permanently disabled
+Warning (14025): LATCH primitive "shipY[13][1]" is permanently disabled
+Warning (14025): LATCH primitive "shipY[13][2]" is permanently disabled
+Warning (14025): LATCH primitive "shipY[14][0]" is permanently disabled
+Warning (14025): LATCH primitive "shipY[14][1]" is permanently disabled
+Warning (14025): LATCH primitive "shipY[14][2]" is permanently disabled
+Warning (14025): LATCH primitive "shipY[15][0]" is permanently disabled
+Warning (14025): LATCH primitive "shipY[15][1]" is permanently disabled
+Warning (14025): LATCH primitive "shipY[15][2]" is permanently disabled
+Warning (14025): LATCH primitive "shipY[16][0]" is permanently disabled
+Warning (14025): LATCH primitive "shipY[16][1]" is permanently disabled
+Warning (14025): LATCH primitive "shipY[16][2]" is permanently disabled
+Warning (14025): LATCH primitive "shipX[0][0]" is permanently disabled
+Warning (14025): LATCH primitive "shipX[0][1]" is permanently disabled
+Warning (14025): LATCH primitive "shipX[1][0]" is permanently disabled
+Warning (14025): LATCH primitive "shipX[1][1]" is permanently disabled
+Warning (14025): LATCH primitive "shipX[2][0]" is permanently disabled
+Warning (14025): LATCH primitive "shipX[2][1]" is permanently disabled
+Warning (14025): LATCH primitive "shipX[3][0]" is permanently disabled
+Warning (14025): LATCH primitive "shipX[3][1]" is permanently disabled
+Warning (14025): LATCH primitive "shipX[4][0]" is permanently disabled
+Warning (14025): LATCH primitive "shipX[4][1]" is permanently disabled
+Warning (14025): LATCH primitive "shipX[5][0]" is permanently disabled
+Warning (14025): LATCH primitive "shipX[5][1]" is permanently disabled
+Warning (14025): LATCH primitive "shipX[6][0]" is permanently disabled
+Warning (14025): LATCH primitive "shipX[6][1]" is permanently disabled
+Warning (14025): LATCH primitive "shipX[7][0]" is permanently disabled
+Warning (14025): LATCH primitive "shipX[7][1]" is permanently disabled
+Warning (14025): LATCH primitive "shipX[8][0]" is permanently disabled
+Warning (14025): LATCH primitive "shipX[8][1]" is permanently disabled
+Warning (14025): LATCH primitive "shipX[9][0]" is permanently disabled
+Warning (14025): LATCH primitive "shipX[9][1]" is permanently disabled
+Warning (14025): LATCH primitive "shipX[10][0]" is permanently disabled
+Warning (14025): LATCH primitive "shipX[10][1]" is permanently disabled
+Warning (14025): LATCH primitive "shipX[11][0]" is permanently disabled
+Warning (14025): LATCH primitive "shipX[11][1]" is permanently disabled
+Warning (14025): LATCH primitive "shipX[12][0]" is permanently disabled
+Warning (14025): LATCH primitive "shipX[12][1]" is permanently disabled
+Warning (14025): LATCH primitive "shipX[13][0]" is permanently disabled
+Warning (14025): LATCH primitive "shipX[13][1]" is permanently disabled
+Warning (14025): LATCH primitive "shipX[14][0]" is permanently disabled
+Warning (14025): LATCH primitive "shipX[14][1]" is permanently disabled
+Warning (14025): LATCH primitive "shipX[15][0]" is permanently disabled
+Warning (14025): LATCH primitive "shipX[15][1]" is permanently disabled
+Warning (14025): LATCH primitive "shipID.0011_120247" is permanently disabled
+Warning (14025): LATCH primitive "shipX[0][2]" is permanently disabled
+Warning (14025): LATCH primitive "shipX[7][2]" is permanently disabled
+Warning (14025): LATCH primitive "shipX[8][2]" is permanently disabled
+Warning (14025): LATCH primitive "shipX[9][2]" is permanently disabled
+Warning (14025): LATCH primitive "shipX[10][2]" is permanently disabled
+Warning (14025): LATCH primitive "shipX[11][2]" is permanently disabled
+Warning (14025): LATCH primitive "shipX[12][2]" is permanently disabled
+Warning (14025): LATCH primitive "shipX[13][2]" is permanently disabled
+Warning (14025): LATCH primitive "shipX[14][2]" is permanently disabled
+Warning (14025): LATCH primitive "shipX[15][2]" is permanently disabled
+Warning (14025): LATCH primitive "shipX[16][2]" is permanently disabled
+Warning (14025): LATCH primitive "shipY[0][2]" is permanently disabled
+Warning (14025): LATCH primitive "shipY[7][2]" is permanently disabled
+Warning (14025): LATCH primitive "shipY[8][2]" is permanently disabled
+Warning (14025): LATCH primitive "shipY[9][2]" is permanently disabled
+Warning (14025): LATCH primitive "shipY[10][2]" is permanently disabled
+Warning (14025): LATCH primitive "shipY[11][2]" is permanently disabled
+Warning (14025): LATCH primitive "shipY[12][2]" is permanently disabled
+Warning (14025): LATCH primitive "shipY[13][2]" is permanently disabled
+Warning (14025): LATCH primitive "shipY[14][2]" is permanently disabled
+Warning (14025): LATCH primitive "shipY[15][2]" is permanently disabled
+Warning (14025): LATCH primitive "shipY[16][2]" is permanently disabled
+Warning (14025): LATCH primitive "shipX[0][0]" is permanently disabled
+Warning (14025): LATCH primitive "shipX[0][1]" is permanently disabled
+Warning (14025): LATCH primitive "shipX[3][2]" is permanently disabled
+Warning (14025): LATCH primitive "shipX[7][0]" is permanently disabled
+Warning (14025): LATCH primitive "shipX[7][1]" is permanently disabled
+Warning (14025): LATCH primitive "shipX[8][0]" is permanently disabled
+Warning (14025): LATCH primitive "shipX[8][1]" is permanently disabled
+Warning (14025): LATCH primitive "shipX[9][0]" is permanently disabled
+Warning (14025): LATCH primitive "shipX[9][1]" is permanently disabled
+Warning (14025): LATCH primitive "shipX[10][0]" is permanently disabled
+Warning (14025): LATCH primitive "shipX[10][1]" is permanently disabled
+Warning (14025): LATCH primitive "shipX[11][0]" is permanently disabled
+Warning (14025): LATCH primitive "shipX[11][1]" is permanently disabled
+Warning (14025): LATCH primitive "shipX[12][0]" is permanently disabled
+Warning (14025): LATCH primitive "shipX[12][1]" is permanently disabled
+Warning (14025): LATCH primitive "shipX[13][0]" is permanently disabled
+Warning (14025): LATCH primitive "shipX[13][1]" is permanently disabled
+Warning (14025): LATCH primitive "shipX[14][0]" is permanently disabled
+Warning (14025): LATCH primitive "shipX[14][1]" is permanently disabled
+Warning (14025): LATCH primitive "shipX[15][0]" is permanently disabled
+Warning (14025): LATCH primitive "shipX[15][1]" is permanently disabled
+Warning (14025): LATCH primitive "shipX[16][0]" is permanently disabled
+Warning (14025): LATCH primitive "shipX[16][1]" is permanently disabled
+Warning (14025): LATCH primitive "shipY[0][0]" is permanently disabled
+Warning (14025): LATCH primitive "shipY[0][1]" is permanently disabled
+Warning (14025): LATCH primitive "shipY[3][2]" is permanently disabled
+Warning (14025): LATCH primitive "shipY[7][0]" is permanently disabled
+Warning (14025): LATCH primitive "shipY[7][1]" is permanently disabled
+Warning (14025): LATCH primitive "shipY[8][0]" is permanently disabled
+Warning (14025): LATCH primitive "shipY[8][1]" is permanently disabled
+Warning (14025): LATCH primitive "shipY[9][0]" is permanently disabled
+Warning (14025): LATCH primitive "shipY[9][1]" is permanently disabled
+Warning (14025): LATCH primitive "shipY[10][0]" is permanently disabled
+Warning (14025): LATCH primitive "shipY[10][1]" is permanently disabled
+Warning (14025): LATCH primitive "shipY[11][0]" is permanently disabled
+Warning (14025): LATCH primitive "shipY[11][1]" is permanently disabled
+Warning (14025): LATCH primitive "shipY[12][0]" is permanently disabled
+Warning (14025): LATCH primitive "shipY[12][1]" is permanently disabled
+Warning (14025): LATCH primitive "shipY[13][0]" is permanently disabled
+Warning (14025): LATCH primitive "shipY[13][1]" is permanently disabled
+Warning (14025): LATCH primitive "shipY[14][0]" is permanently disabled
+Warning (14025): LATCH primitive "shipY[14][1]" is permanently disabled
+Warning (14025): LATCH primitive "shipY[15][0]" is permanently disabled
+Warning (14025): LATCH primitive "shipY[15][1]" is permanently disabled
+Warning (14025): LATCH primitive "shipY[16][0]" is permanently disabled
+Warning (14025): LATCH primitive "shipY[16][1]" is permanently disabled
+Warning (14025): LATCH primitive "shipX[2][2]" is permanently disabled
+Warning (14025): LATCH primitive "shipX[3][0]" is permanently disabled
+Warning (14025): LATCH primitive "shipX[3][1]" is permanently disabled
+Warning (14025): LATCH primitive "shipX[4][2]" is permanently disabled
+Warning (14025): LATCH primitive "shipY[2][2]" is permanently disabled
+Warning (14025): LATCH primitive "shipY[3][0]" is permanently disabled
+Warning (14025): LATCH primitive "shipY[3][1]" is permanently disabled
+Warning (14025): LATCH primitive "shipY[4][2]" is permanently disabled
+Warning (14025): LATCH primitive "shipX[2][0]" is permanently disabled
+Warning (14025): LATCH primitive "shipX[2][1]" is permanently disabled
+Warning (14025): LATCH primitive "shipX[4][0]" is permanently disabled
+Warning (14025): LATCH primitive "shipX[4][1]" is permanently disabled
+Warning (14025): LATCH primitive "shipY[2][0]" is permanently disabled
+Warning (14025): LATCH primitive "shipY[2][1]" is permanently disabled
+Warning (14025): LATCH primitive "shipY[4][0]" is permanently disabled
+Warning (14025): LATCH primitive "shipY[4][1]" is permanently disabled
+Warning (14025): LATCH primitive "shipID.0011_120247" is permanently disabled
+Warning (14025): LATCH primitive "shipX[5][2]" is permanently disabled
+Warning (14025): LATCH primitive "shipX[6][2]" is permanently disabled
+Warning (14025): LATCH primitive "shipY[5][2]" is permanently disabled
+Warning (14025): LATCH primitive "shipY[6][2]" is permanently disabled
+Warning (14025): LATCH primitive "shipX[5][0]" is permanently disabled
+Warning (14025): LATCH primitive "shipX[5][1]" is permanently disabled
+Warning (14025): LATCH primitive "shipX[6][0]" is permanently disabled
+Warning (14025): LATCH primitive "shipX[6][1]" is permanently disabled
+Warning (14025): LATCH primitive "shipY[5][0]" is permanently disabled
+Warning (14025): LATCH primitive "shipY[5][1]" is permanently disabled
+Warning (14025): LATCH primitive "shipY[6][0]" is permanently disabled
+Warning (14025): LATCH primitive "shipY[6][1]" is permanently disabled
+Warning (13012): Latch matchFound has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal y.result
+Warning (13012): Latch Y.startScreen_185512 has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal y.result
+Warning (13024): Output pins are stuck at VCC or GND
+    Warning (13410): Pin "dispHEX0[7]" is stuck at VCC
+    Warning (13410): Pin "dispHEX1[7]" is stuck at VCC
+Info (286030): Timing-Driven Synthesis is running
+Info (17049): 7 registers lost all their fanouts during netlist optimizations.
+Info (144001): Generated suppressed messages file C:/Users/Ryan/Desktop/DE0BattleShip/output_files/DE0BattleShip.map.smsg
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
+Warning (21074): Design contains 1 input pin(s) that do not drive logic
+    Warning (15610): No output dependent on input pin "clk0"
+Info (21057): Implemented 101 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 4 input pins
+    Info (21059): Implemented 32 output pins
+    Info (21061): Implemented 65 logic cells
+Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 292 warnings
+    Info: Peak virtual memory: 545 megabytes
+    Info: Processing ended: Thu Oct 01 03:04:14 2015
+    Info: Elapsed time: 00:00:33
+    Info: Total CPU time (on all processors): 00:00:32
+
+
++------------------------------------------+
+; Analysis & Synthesis Suppressed Messages ;
++------------------------------------------+
+The suppressed messages can be found in C:/Users/Ryan/Desktop/DE0BattleShip/output_files/DE0BattleShip.map.smsg.
+
+
