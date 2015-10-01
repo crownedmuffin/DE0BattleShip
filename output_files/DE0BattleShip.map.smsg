@@ -1,2 +1,0 @@
-Warning (10268): Verilog HDL information at DE0BattleShip.v(202): always construct contains both blocking and non-blocking assignments
-Info (10281): Verilog HDL Declaration information at DE0BattleShip.v(69): object "y" differs only in case from object "Y" in the same scope
